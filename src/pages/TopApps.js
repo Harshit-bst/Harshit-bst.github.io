@@ -21,7 +21,7 @@ TopAppsHeader.propTypes = {onClick: PropTypes.func};
 function CardView({data}) {
     return (
         <div className={"card-view-playstore"}>{
-            data.map((dataItem, i) => {return (i<3? <Link to={`/frontend_top_rated_app/appdetails/${dataItem.pkg}`}><MediaCard data={dataItem}/></Link> : null);})
+            data.map((dataItem, i) => {return (i<3? <Link to={`/appdetails/${dataItem.pkg}`}><MediaCard data={dataItem}/></Link> : null);})
         }
         </div>
     );

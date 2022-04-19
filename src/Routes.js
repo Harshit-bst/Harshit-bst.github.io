@@ -5,9 +5,9 @@ import AppDetails from "./pages/AppDetails";
 export default function AppRoutes(props){
     return (
         <Routes>
-            <Route path={'/frontend_top_rated_app'} element={<TopApps/>} exact>
+            <Route path={'/'} element={<TopApps/>} exact>
             </Route>
-            <Route path={`/frontend_top_rated_app/appdetails/:pkg_name`} element={<AppDetails/>} exact>
+            <Route path={`/appdetails/:pkg_name`} element={<AppDetails/>} exact>
             </Route>
         </Routes>
     );
