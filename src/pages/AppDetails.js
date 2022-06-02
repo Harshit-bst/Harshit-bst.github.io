@@ -51,6 +51,13 @@ export default function AppDetails(){
     }, []);
     if (isBusy)
         return <div>Loading....</div>
+    if (apiData.error)
+        return <div>
+                <div className={"div-bluestacks"}>
+                    <Link to={`/frontend_top_rated_app/`}><img src={bluestacksLogo} alt={"Bluestacks Logo"} className={"bluestacks-logo"}/></Link>
+                </div>
+                <div className={"app-details-div"}>Error occurred while getting the app details. Please make sure package name is correct</div>
+               </div>
     return (
         <div>
             <div className={"div-bluestacks"}>

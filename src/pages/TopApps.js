@@ -21,16 +21,16 @@ TopAppsHeader.propTypes = {onClick: PropTypes.func};
 function CardView({data}) {
     return (
         <div className={"card-view-playstore"}>{
-            data.map((dataItem, i) => {return (i<3? <Link to={`/appdetails/${dataItem.pkg}`}><MediaCard data={dataItem}/></Link> : null);})
+            data.map((dataItem, i) => {return (i<3? <Link to={`/frontend_top_rated_app/appdetails/${dataItem.pkg}`}><MediaCard data={dataItem}/></Link> : null);})
         }
         </div>
     );
 }
 
 function handleRefresh() {
-    axiosInstance('/save-new-apps').then(
+    axiosInstance('/task-queue-save-new-apps').then(
         (response) => {
-            alert('New Apps synced from playstore');
+            alert('New Apps sync from playstore is in progress. Please refresh the page after a minute to see new apps');
         }
     )
 }
@@ -58,6 +58,11 @@ function TopApps() {
     }, []);
     if (isBusy)
         return <div>Loading....</div>
+    if (!apiData)
+        return <div>
+            <TopAppsHeader onClick={() => handleRefresh()}/>
+            <div className={"apps-div"}>No apps present in your database. Click ↻ Button to sync apps to DB.</div>
+        </div>
     return (
         <div>
             <TopAppsHeader onClick={() => handleRefresh()}/>
