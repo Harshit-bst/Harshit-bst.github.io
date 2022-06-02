@@ -1,4 +1,4 @@
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axiosInstance from "../api/axios";
 import bluestacksLogo from "../assets/img.png";
@@ -54,7 +54,7 @@ export default function AppDetails(){
     return (
         <div>
             <div className={"div-bluestacks"}>
-                <a href={"/"}><img src={bluestacksLogo} alt={"Bluestacks Logo"} className={"bluestacks-logo"}/></a>
+                <Link to={`/frontend_top_rated_app/`}><img src={bluestacksLogo} alt={"Bluestacks Logo"} className={"bluestacks-logo"}/></Link>
             </div>
             <div className={"app-details-div"}>
                 <AppDetailsTop data={apiData}></AppDetailsTop>
