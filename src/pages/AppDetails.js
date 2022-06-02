@@ -54,7 +54,7 @@ export default function AppDetails(){
     return (
         <div>
             <div className={"div-bluestacks"}>
-                <a href={"/"}><img src={bluestacksLogo} alt={"Bluestacks Logo"} className={"bluestacks-logo"}/></a>
+                <a href={"/frontend_top_rated_app"}><img src={bluestacksLogo} alt={"Bluestacks Logo"} className={"bluestacks-logo"}/></a>
             </div>
             <div className={"app-details-div"}>
                 <AppDetailsTop data={apiData}></AppDetailsTop>
